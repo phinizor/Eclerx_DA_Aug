@@ -1,0 +1,390 @@
+{
+  "datasets": [
+    {
+      "name": "e585b5ec",
+      "displayName": "circuit",
+      "queryLines": [
+        "SELECT * FROM circuit_countname"
+      ],
+      "catalog": "eclerx",
+      "schema": "formula1"
+    },
+    {
+      "name": "eaa30d2b",
+      "displayName": "drivers",
+      "queryLines": [
+        "SELECT * FROM eclerx.formula1.drivers"
+      ]
+    },
+    {
+      "name": "9baa4228",
+      "displayName": "circuit_countname",
+      "queryLines": [
+        "SELECT * FROM eclerx.formula1.circuit_countname"
+      ]
+    },
+    {
+      "name": "67919543",
+      "displayName": "circuit",
+      "queryLines": [
+        "SELECT * FROM eclerx.formula1.circuit"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "89ac7f56",
+      "displayName": "Untitled page",
+      "layout": [
+        {
+          "widget": {
+            "name": "097203bf",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "eaa30d2b",
+                  "fields": [
+                    {
+                      "name": "count(driverId)",
+                      "expression": "COUNT(`driverId`)"
+                    },
+                    {
+                      "name": "nationality",
+                      "expression": "`nationality`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "count(driverId)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "axis": {
+                    "title": "total Drivers"
+                  },
+                  "displayName": "total Drivers"
+                },
+                "y": {
+                  "fieldName": "nationality",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "nationality"
+                },
+                "label": {
+                  "show": true
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total Drivers",
+                "showDescription": false
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 2
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 3,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "b96442f5",
+            "queries": [
+              {
+                "name": "dashboards/01f085849e08172ca77a2cbc8e260efa/datasets/01f08586bd8c15dabc18d850eac74527_nationality",
+                "query": {
+                  "datasetName": "eaa30d2b",
+                  "fields": [
+                    {
+                      "name": "nationality",
+                      "expression": "`nationality`"
+                    },
+                    {
+                      "name": "nationality_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "nationality",
+                    "displayName": "nationality",
+                    "queryName": "dashboards/01f085849e08172ca77a2cbc8e260efa/datasets/01f08586bd8c15dabc18d850eac74527_nationality"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "0d358000",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e585b5ec",
+                  "fields": [
+                    {
+                      "name": "count(count)",
+                      "expression": "COUNT(`count`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(count)",
+                  "displayName": "Count of count"
+                }
+              },
+              "frame": {
+                "showTitle": true,
+                "title": "Total circuits"
+              }
+            }
+          },
+          "position": {
+            "x": 5,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "6a16faf3",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "eaa30d2b",
+                  "fields": [
+                    {
+                      "name": "count(driverId)",
+                      "expression": "COUNT(`driverId`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(driverId)",
+                  "displayName": "Count of driverId"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 2,
+            "y": 0,
+            "width": 1,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "37c41db6",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "e585b5ec",
+                  "fields": [
+                    {
+                      "name": "country",
+                      "expression": "`country`"
+                    },
+                    {
+                      "name": "sum(count)",
+                      "expression": "SUM(`count`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "country",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "country"
+                },
+                "y": {
+                  "fieldName": "sum(count)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of count"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 2,
+            "width": 3,
+            "height": 5
+          }
+        },
+        {
+          "widget": {
+            "name": "e2548097",
+            "queries": [
+              {
+                "name": "dashboards/01f085849e08172ca77a2cbc8e260efa/datasets/01f08584aa411572b83c31a8f60814b2_country",
+                "query": {
+                  "datasetName": "e585b5ec",
+                  "fields": [
+                    {
+                      "name": "country",
+                      "expression": "`country`"
+                    },
+                    {
+                      "name": "country_associativity",
+                      "expression": "COUNT_IF(`associative_filter_predicate_group`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": [
+                  {
+                    "fieldName": "country",
+                    "displayName": "country",
+                    "queryName": "dashboards/01f085849e08172ca77a2cbc8e260efa/datasets/01f08584aa411572b83c31a8f60814b2_country"
+                  }
+                ]
+              },
+              "frame": {
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 3,
+            "y": 0,
+            "width": 2,
+            "height": 2
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "canvasBackgroundColor": {
+        "light": "#FAFAFB",
+        "dark": "#1F272D"
+      },
+      "widgetBackgroundColor": {
+        "light": "#FFFFFF",
+        "dark": "#11171C"
+      },
+      "fontColor": {
+        "light": "#11171C",
+        "dark": "#E8ECF0"
+      },
+      "selectionColor": {
+        "light": "#2272B4",
+        "dark": "#8ACAFF"
+      },
+      "visualizationColors": [
+        "#077A9D"
+      ],
+      "widgetHeaderAlignment": "LEFT"
+    }
+  }
+}

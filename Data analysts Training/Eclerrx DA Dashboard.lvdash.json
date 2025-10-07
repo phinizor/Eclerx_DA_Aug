@@ -1,0 +1,295 @@
+{
+  "datasets": [
+    {
+      "name": "b909f278",
+      "displayName": "circuit_countname",
+      "queryLines": [
+        "SELECT * FROM eclerx.formula1.circuit_countname"
+      ]
+    },
+    {
+      "name": "0895c0b4",
+      "displayName": "circuit",
+      "queryLines": [
+        "SELECT * FROM eclerx.formula1.circuit"
+      ]
+    },
+    {
+      "name": "74687ec0",
+      "displayName": "drivers",
+      "queryLines": [
+        "SELECT * FROM eclerx.formula1.drivers"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "6743471e",
+      "displayName": "Untitled page",
+      "layout": [
+        {
+          "widget": {
+            "name": "d1f5491f",
+            "multilineTextboxSpec": {
+              "lines": [
+                "Formula One Dashboard"
+              ]
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 6,
+            "height": 2
+          }
+        },
+        {
+          "widget": {
+            "name": "9a0b9751",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "0895c0b4",
+                  "fields": [
+                    {
+                      "name": "count(location)",
+                      "expression": "COUNT(`location`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(location)",
+                  "displayName": "Count of location"
+                }
+              },
+              "frame": {
+                "title": "Total Locations",
+                "showTitle": true
+              }
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 3,
+            "width": 2,
+            "height": 3
+          }
+        },
+        {
+          "widget": {
+            "name": "e4e7cf08",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "b909f278",
+                  "fields": [
+                    {
+                      "name": "country",
+                      "expression": "`country`"
+                    },
+                    {
+                      "name": "sum(count)",
+                      "expression": "SUM(`count`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "country",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "country"
+                },
+                "y": {
+                  "fieldName": "sum(count)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of count"
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 2,
+            "width": 4,
+            "height": 4
+          }
+        },
+        {
+          "widget": {
+            "name": "e7966254",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "74687ec0",
+                  "fields": [
+                    {
+                      "name": "sum(driverId)",
+                      "expression": "SUM(`driverId`)"
+                    },
+                    {
+                      "name": "nationality",
+                      "expression": "`nationality`"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "version": 3,
+              "widgetType": "bar",
+              "encodings": {
+                "x": {
+                  "fieldName": "sum(driverId)",
+                  "scale": {
+                    "type": "quantitative"
+                  },
+                  "displayName": "Sum of driverId"
+                },
+                "y": {
+                  "fieldName": "nationality",
+                  "scale": {
+                    "type": "categorical"
+                  },
+                  "displayName": "nationality"
+                }
+              },
+              "frame": {
+                "title": "Driver's nationality wise",
+                "showTitle": true
+              },
+              "mark": {
+                "colors": [
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 2
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 3
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 4
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 5
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 6
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 7
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 8
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 9
+                  },
+                  {
+                    "themeColorType": "visualizationColors",
+                    "position": 10
+                  }
+                ]
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 6,
+            "width": 6,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "3f2addb0",
+            "spec": {
+              "version": 2,
+              "widgetType": "filter-single-select",
+              "encodings": {
+                "fields": []
+              },
+              "frame": {
+                "showTitle": true,
+                "showDescription": false
+              },
+              "disallowAll": false
+            }
+          },
+          "position": {
+            "x": 4,
+            "y": 2,
+            "width": 2,
+            "height": 1
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "canvasBackgroundColor": {
+        "light": "#FAFAFB",
+        "dark": "#1F272D"
+      },
+      "widgetBackgroundColor": {
+        "light": "#FFFFFF",
+        "dark": "#11171C"
+      },
+      "fontColor": {
+        "light": "#11171C",
+        "dark": "#E8ECF0"
+      },
+      "selectionColor": {
+        "light": "#2272B4",
+        "dark": "#8ACAFF"
+      },
+      "visualizationColors": [
+        "#2D86AC",
+        "#FFAB00",
+        "#00A972",
+        "#FF3621",
+        "#8BCAE7",
+        "#AB4057",
+        "#99DDB4",
+        "#FCA4A1",
+        "#919191",
+        "#BF7080"
+      ],
+      "widgetHeaderAlignment": "LEFT",
+      "fontFamily": "Arial"
+    }
+  }
+}
